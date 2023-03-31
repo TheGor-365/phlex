@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'what/about'
-  
-  # root "articles#index"
+  root "posts#index"
+
+  resources :posts
+  resources :pages, only: [:index]
+
+  get 'what/about', to: "what#about"
 end

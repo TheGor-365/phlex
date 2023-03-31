@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center mb-5">Posts</h1>
+
+<div id="posts" class="mb-3">
+  <% @posts.each do |post| %>
+    <div class="border rounded p-5">
+      <%= render post %>
+      <small>
+        <%= link_to "show post", post %>
+      </small>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New post", new_post_path, class: "float-end" %>
