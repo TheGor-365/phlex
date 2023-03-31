@@ -3,6 +3,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+
+    render Posts::IndexView.new(
+      posts: @posts
+    )
   end
 
   def show; end
